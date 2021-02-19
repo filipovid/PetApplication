@@ -4,8 +4,6 @@ import com.springframework.petdemo.model.Owner;
 import com.springframework.petdemo.model.Vet;
 import com.springframework.petdemo.services.OwnerService;
 import com.springframework.petdemo.services.VetService;
-import com.springframework.petdemo.services.map.OwnerMapService;
-import com.springframework.petdemo.services.map.VetMapService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +13,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerMapService();
-        vetService = new VetMapService();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -35,6 +33,8 @@ public class DataLoader implements CommandLineRunner {
         owner2.setLastName("Glennane");
 
         ownerService.save(owner2);
+
+        System.out.println("Loaded Owners...");
 
         Vet vet1 = new Vet();
         vet1.setId(1L);

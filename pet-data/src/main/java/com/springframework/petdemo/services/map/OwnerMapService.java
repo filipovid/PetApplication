@@ -2,10 +2,11 @@ package com.springframework.petdemo.services.map;
 
 import com.springframework.petdemo.model.Owner;
 import com.springframework.petdemo.services.OwnerService;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.Set;
 
+@Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
