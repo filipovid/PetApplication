@@ -7,8 +7,8 @@
     <version>0.0.5-SNAPSHOT</version>
 
     <modules>
-        <module>pet-clinic-data</module>
-        <module>pet-clinic-web</module>
+        <module>pet-data</module>
+        <module>pet-web</module>
     </modules>
 
     <packaging>pom</packaging>
